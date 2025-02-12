@@ -1,0 +1,124 @@
+.box{
+    display: inline-block;
+}
+.size{
+    display: inline-flex;
+    /* width: max-content; */
+    list-style: none;
+    background-color: #fff;
+    border-radius: 99px;
+    box-shadow: 0 0 1px 0 rgba(#185ee0, 0.15), 0 6px 12px 0 rgba(#185ee0, 0.15);
+    padding: 10px;
+    position: relative;
+}
+.size__item{
+    width: 150px;
+    height: 44px;
+    border-radius: 99px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+	font-weight: 500;
+    transition: .25s linear;
+    z-index: 2;
+    cursor: pointer;
+    transition: color .25s ease-out;
+}
+.size__item:first-child{
+    color: #185ee0;
+}
+.size--active{
+    position: absolute;
+    height: 44px;
+    width: 150px;
+    background-color: #e6eef9;
+    border-radius: 99px;
+    transition: .25s ease-out;
+}
+.stats{
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.score{
+} 
+.record{
+
+}
+.game__container{
+    position: relative;
+}
+.blocks{
+    list-style: none;
+    background-color: rgb(181, 181, 181);
+    display: flex;
+    flex-wrap: wrap;
+    width: 550px;
+    height: 550px;
+    justify-content: space-around;
+    align-items: center;
+    /* overflow: hidden; */
+}
+
+.block{
+    width: 125px;
+    height: 125px;
+    background-color: rgb(125, 125, 125);
+    transition: .3s background-color linear;
+    pointer-events: none; /* Забороняє натискання
+    /* opacity: 0.5;  */
+}
+.block:hover{
+    cursor: pointer;
+}
+.block--active{
+    background-color: coral;
+}
+.block--correct{
+    background-color: greenyellow;
+}
+.block--incorrect{
+    background-color: red;
+}
+
+.button{
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: palevioletred;
+    margin: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+.result{
+    position: absolute;
+    top: 50%;
+    width: 400px;
+    height: 300px;
+    /* background: linear-gradient(315deg, rgb(39, 39, 39), rgb(147, 147, 147)); */
+    background-image: url('back.jpg');
+    background-size: cover;
+    color: #fff;
+    border-radius: 15px;
+    font-size: 40px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: animationResult .25s linear forwards;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+@keyframes animationResult {
+    from{
+        left: 0;
+        transform: translate(0%, -50%);
+    }
+    to{
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
