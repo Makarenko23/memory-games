@@ -14,10 +14,24 @@ sizeTabs.forEach((sizeTab, i) => {
         blockContainer.innerHTML = '';
 
         for(let j = 0; j < totalCells; j++){
+          if(cells === 6){
+            blockContainer.innerHTML += `<li class="block" style="width: 100px;height: 100px"></li>`;
+            blockContainer.style.width = `${cells * 100 + 50}px`;
+            blockContainer.style.height = `${cells * 100 + 50}px`;
+          }
+          else if(cells === 5){
+            blockContainer.innerHTML += `<li class="block" style="width: 110px;height: 110px"></li>`;
+            blockContainer.style.width = `${cells * 110 + 50}px`;
+            blockContainer.style.height = `${cells * 110 + 50}px`;
+          }
+          else{
             blockContainer.innerHTML += `<li class="block"></li>`;
+            blockContainer.style.width = `${cells * 125 + 50}px`;
+            blockContainer.style.height = `${cells * 125 + 50}px`;
+          }
+            // blockContainer.innerHTML += `<li class="block"></li>`;
         }
-        blockContainer.style.width = `${cells * 125 + 50}px`;
-        blockContainer.style.height = `${cells * 125 + 50}px`;
+
 
         // start.style.display = 'inline-block';
         // start.textContent = "START";
@@ -38,16 +52,15 @@ function changeColor(i){
 
 function renderGame(){
 
-    const blocks = document.querySelectorAll('.block'),
+const blocks = document.querySelectorAll('.block'),
     start = document.querySelectorAll('.button'),
     result = document.querySelector('.result'),
     scoreText = document.querySelector('.score'),
     recordText = document.querySelector('.record'),
     stats = document.querySelector('.stats');
 
-    start[0].style.display = 'inline-block';
+    start[0].style.visibility = 'visible';
     result.style.display = 'none';
-    stats.style.marginTop = '0px';
 
 let score = 0;
 let order = [];
@@ -131,9 +144,8 @@ function generateOrder(){
         score = 0;
         scoreText.textContent = `Score: ${score}`;
         generateOrder();
-        start[0].style.display = 'none';
+        start[0].style.visibility = 'hidden';
         result.style.display = 'none';
-        stats.style.marginTop = '100px';
       })
   }) 
 

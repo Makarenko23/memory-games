@@ -3,7 +3,6 @@
 }
 .size{
     display: inline-flex;
-    /* width: max-content; */
     list-style: none;
     background-color: #fff;
     border-radius: 99px;
@@ -40,7 +39,7 @@
     font-size: 40px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .score{
 } 
@@ -60,14 +59,17 @@
     justify-content: space-around;
     align-items: center;
     /* overflow: hidden; */
+    box-shadow: 1px 2px 7px rgb(181, 181, 181);
 }
 
 .block{
     width: 125px;
     height: 125px;
     background-color: rgb(125, 125, 125);
-    transition: .3s background-color linear;
-    pointer-events: none; /* Забороняє натискання
+    box-shadow: 1px 2px 7px rgb(125, 125, 125);
+
+    transition: .3s all linear;
+    pointer-events: none; 
     /* opacity: 0.5;  */
 }
 .block:hover{
@@ -75,37 +77,47 @@
 }
 .block--active{
     background-color: coral;
+    box-shadow: 1px 2px 7px coral;
+
 }
 .block--correct{
     background-color: greenyellow;
+    box-shadow: 1px 2px 7px greenyellow;
+
 }
 .block--incorrect{
-    background-color: red;
+    background-color: rgb(219, 29, 29);
+    box-shadow: 1px 2px 7px rgb(219, 29, 29);
+
 }
 
 .button{
     display: inline-block;
     padding: 20px 40px;
     background-color: palevioletred;
+    box-shadow: 1px 2px 7px palevioletred;
     margin: 20px;
     cursor: pointer;
     text-transform: uppercase;
     border-radius: 10px;
+    transition: .2s background-color linear;
+}
+.button:hover{
+    background-color: rgb(199, 64, 109);
 }
 .result{
     position: absolute;
     top: 50%;
     width: 400px;
     height: 300px;
-    /* background: linear-gradient(315deg, rgb(39, 39, 39), rgb(147, 147, 147)); */
-    background-image: url('../images/back.jpg');
-    background-size: cover;
+    background-color: #000000;
+    box-shadow: 1px 2px 7px #000000;
     color: #fff;
     border-radius: 15px;
     font-size: 40px;
     display: none;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
     animation: animationResult .25s linear forwards;
     text-transform: uppercase;
