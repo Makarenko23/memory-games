@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <title>Memory Game</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="container">
+            <div class="content">
+                <h1 class="title">MEMORY GAMES</h1>
+                <p class="subtitle">Choose your game</p>
+                <ul class="cards">
+                    <li class="card" data-game="../scripts/game1.js">
+                        <div class="card__title">Card order</div>
+                        <div class="card__img">
+                            <img src="images/game1.gif" alt="game1">
+                        </div>
+                    </li>
+                    <li class="card" data-game="../scripts/game2.js">
+                        <div class="card__title">Card pick</div>
+                        <div class="card__img">
+                            <img src="images/game2.gif" alt="game2">
+                        </div>
+                    </li>
+                    <li class="card" data-game="../scripts/game3.js">
+                        <div class="card__title">Card flipper</div>
+                        <div class="card__img">
+                            <img src="images/game3.gif" alt="game3">
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <div class="box">
                 <ul class="size">
                     <li class="size__item">4x4</li>
@@ -47,6 +72,17 @@
                     </div>
                 </div>
             </div>
+            <ul class="cards cards-left">
+                <li class="card card-left" data-game="../scripts/game1.js">
+                    <div class="card__title">Card order</div>
+                </li>
+                <li class="card card-left" data-game="../scripts/game2.js">
+                    <div class="card__title">Card pick</div>
+                </li>
+                <li class="card card-left" data-game="../scripts/game3.js">
+                    <div class="card__title">Card flipper</div>
+                </li>
+            </ul>
         </div>
     </div>
     <script src="scripts/script.js"></script>
